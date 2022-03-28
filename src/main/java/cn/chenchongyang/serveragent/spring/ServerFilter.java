@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent;
+package cn.chenchongyang.serveragent.spring;
 
 import org.springframework.lang.NonNull;
 

@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent.annotations;
+package cn.chenchongyang.serveragent.spring.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

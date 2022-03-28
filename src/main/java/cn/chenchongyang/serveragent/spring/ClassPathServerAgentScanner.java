@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent;
+package cn.chenchongyang.serveragent.spring;
 
 import static org.springframework.util.Assert.notNull;
 

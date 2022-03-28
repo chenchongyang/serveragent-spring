@@ -1,8 +1,8 @@
 
-package cn.chenchongyang.serveragent.annotations;
+package cn.chenchongyang.serveragent.spring.annotations;
 
-import cn.chenchongyang.serveragent.ServerClient;
-import cn.chenchongyang.serveragent.ServerFilter;
+import cn.chenchongyang.serveragent.spring.ServerClient;
+import cn.chenchongyang.serveragent.spring.ServerFilter;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent;
+package cn.chenchongyang.serveragent.spring;
 
 import lombok.extern.slf4j.Slf4j;
 

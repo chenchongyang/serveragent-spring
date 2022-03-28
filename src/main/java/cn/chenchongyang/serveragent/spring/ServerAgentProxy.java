@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent;
+package cn.chenchongyang.serveragent.spring;
 
 import cn.chenchongyang.serveragent.annotations.Body;
 import cn.chenchongyang.serveragent.annotations.Header;

@@ -1,5 +1,5 @@
 
-package cn.chenchongyang.serveragent.annotations;
+package cn.chenchongyang.serveragent.spring.annotations;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 
