@@ -1,12 +1,12 @@
 
 package cn.chenchongyang.serveragent.spring;
 
-import cn.chenchongyang.serveragent.annotations.Body;
-import cn.chenchongyang.serveragent.annotations.Header;
-import cn.chenchongyang.serveragent.annotations.Headers;
-import cn.chenchongyang.serveragent.annotations.Param;
-import cn.chenchongyang.serveragent.annotations.ServerAgent;
-import cn.chenchongyang.serveragent.annotations.ServerMapper;
+import cn.chenchongyang.serveragent.spring.annotations.Body;
+import cn.chenchongyang.serveragent.spring.annotations.Header;
+import cn.chenchongyang.serveragent.spring.annotations.Headers;
+import cn.chenchongyang.serveragent.spring.annotations.Param;
+import cn.chenchongyang.serveragent.spring.annotations.ServerAgent;
+import cn.chenchongyang.serveragent.spring.annotations.ServerMapper;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
