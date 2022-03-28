@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.chenchongyang</groupId>
-    <artifactId>serveragent</artifactId>
+    <artifactId>serveragent-spring</artifactId>
     <version>1.0.0</version>
 
-    <name>server-agent</name>
+    <name>server-agent-spring</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
