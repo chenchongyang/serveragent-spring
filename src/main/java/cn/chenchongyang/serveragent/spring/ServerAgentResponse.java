@@ -16,9 +16,9 @@ import java.util.Map;
 @Getter
 public class ServerAgentResponse {
 
-    private Map<String, String> headers;
+    private Map<String, String> header;
 
-    private String rawResult;
+    private String rawStr;
 
-    private Integer statusCode;
+    private Integer httpCode;
 }

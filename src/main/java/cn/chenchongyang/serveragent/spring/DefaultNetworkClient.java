@@ -62,16 +62,15 @@ public class DefaultNetworkClient implements ServerClient {
         ServerAgentResponse serverAgentResponse = new ServerAgentResponse();
         HttpRequestBase httpRequestBase = buildHttpRequest(serverAgentContext);
         try (CloseableHttpResponse closeableHttpResponse = closeableHttpClient.execute(httpRequestBase)) {
-            Map<String, String> headers = Arrays.stream(closeableHttpResponse.getAllHeaders())
+            Map<String, String> header = Arrays.stream(closeableHttpResponse.getAllHeaders())
                 .collect(Collectors.toMap(NameValuePair::getName, NameValuePair::getValue));
-            serverAgentResponse.setHeaders(headers);
+            serverAgentResponse.setHeader(header);
 
             int statusCode = closeableHttpResponse.getStatusLine().getStatusCode();
-            serverAgentResponse.setStatusCode(statusCode);
+            serverAgentResponse.setHttpCode(statusCode);
 
             if (statusCode == HttpStatus.SC_OK) {
-                String rawResult = EntityUtils.toString(closeableHttpResponse.getEntity());
-                serverAgentResponse.setRawResult(rawResult);
+                serverAgentResponse.setRawStr(EntityUtils.toString(closeableHttpResponse.getEntity()));
             }
         }
         return serverAgentResponse;

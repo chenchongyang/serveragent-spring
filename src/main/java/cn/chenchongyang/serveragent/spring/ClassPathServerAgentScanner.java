@@ -19,6 +19,7 @@ import java.util.Set;
  * 类简要描述
  *
  * @author chenchongyang
+ * @see org.mybatis.spring.mapper.ClassPathMapperScanner
  * @since 2021-12-30
  */
 public class ClassPathServerAgentScanner extends ClassPathBeanDefinitionScanner {

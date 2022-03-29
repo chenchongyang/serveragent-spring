@@ -88,7 +88,7 @@ public class ServerAgentProxy<T> implements InvocationHandler {
         if (serverMapper == null) {
             throw new ServerAgentException("@ServerMapper is necessary!");
         }
-        serverAgentContext.setRequestMethod(serverMapper.requestMethod());
+        serverAgentContext.setRequestMethod(serverMapper.method());
         serverAgentContext.setEncode(serverMapper.encode());
         if (StringUtils.isNotBlank(serverMapper.host())) {
             serverAgentContext.setHost(serverMapper.host());

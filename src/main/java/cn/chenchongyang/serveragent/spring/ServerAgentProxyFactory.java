@@ -28,7 +28,7 @@ public class ServerAgentProxyFactory<T> {
      * @return 代理类
      */
     public T newInstance() {
-        ServerAgentProxy<T> proxy = new ServerAgentProxy<T>(serverAgentInterface, applicationContext);
+        ServerAgentProxy<T> proxy = new ServerAgentProxy<>(serverAgentInterface, applicationContext);
         return (T) Proxy.newProxyInstance(serverAgentInterface.getClassLoader(), new Class[] {serverAgentInterface},
             proxy);
     }

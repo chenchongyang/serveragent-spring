@@ -18,7 +18,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface ServerMapper {
 
-    RequestMethod requestMethod() default RequestMethod.POST;
+    RequestMethod method() default RequestMethod.POST;
 
     /**
      * 如果在定义则覆盖ServerAgent中的值
@@ -36,4 +36,11 @@ public @interface ServerMapper {
     int timeout() default -1;
 
     String encode() default "UTF-8";
+
+    /**
+     * 需要程序处理的http状态码，{}表示处理所有状态码，否则通过异常的形式抛出
+     * 
+     * @return 需要程序处理的http状态码
+     */
+    int[] activeCode() default {200};
 }

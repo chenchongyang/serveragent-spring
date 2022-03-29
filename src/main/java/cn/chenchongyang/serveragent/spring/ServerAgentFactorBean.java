@@ -12,22 +12,22 @@ import org.springframework.context.ApplicationContext;
  */
 public class ServerAgentFactorBean<T> implements FactoryBean<T> {
 
-    private final ServerAgentProxyFactory<T> factory;
+    private final ServerAgentProxyFactory<T> proxyfactory;
 
     private final Class<T> serverAgentInterface;
 
     public ServerAgentFactorBean(Class<T> serverAgentInterface, ApplicationContext applicationContext) {
         this.serverAgentInterface = serverAgentInterface;
-        this.factory = new ServerAgentProxyFactory<>(serverAgentInterface, applicationContext);
+        this.proxyfactory = new ServerAgentProxyFactory<>(serverAgentInterface, applicationContext);
     }
 
     @Override
     public T getObject() throws Exception {
-        return factory.newInstance();
+        return proxyfactory.newInstance();
     }
 
     @Override
     public Class<T> getObjectType() {
-        return serverAgentInterface;
+        return this.serverAgentInterface;
     }
 }
