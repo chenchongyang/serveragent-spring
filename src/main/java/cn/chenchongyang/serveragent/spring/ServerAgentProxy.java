@@ -13,7 +13,9 @@ import com.alibaba.fastjson.TypeReference;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.ApplicationContext;
+import org.springframework.util.PropertyPlaceholderHelper;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -21,6 +23,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -44,7 +47,6 @@ public class ServerAgentProxy<T> implements InvocationHandler {
         this.applicationContext = applicationContext;
         serverAgent = serverAgentInterface.getAnnotation(ServerAgent.class);
         client = getClient(serverAgent.client());
-        client.init();
         serverFilterList = getFilter(serverAgent.serverFilter());
     }
 
@@ -61,7 +63,7 @@ public class ServerAgentProxy<T> implements InvocationHandler {
         }
     }
 
-    public ServerClient getClient(Class<? extends ServerClient> clientCls) {
+    private ServerClient getClient(Class<? extends ServerClient> clientCls) {
         return applicationContext.getBean(clientCls);
     }
 
@@ -90,6 +92,21 @@ public class ServerAgentProxy<T> implements InvocationHandler {
         }
         serverAgentContext.setRequestMethod(serverMapper.method());
         serverAgentContext.setEncode(serverMapper.encode());
+
+
+
+        PropertyPlaceholderHelper helper = new PropertyPlaceholderHelper("#{","}",
+                ":",false);
+
+
+//        Properties properties =  new Properties();
+//        properties.load(,);
+
+
+
+
+//        String s = helper.replacePlaceholders(serverMapper.host(), properties);
+        // 占位符替换
         if (StringUtils.isNotBlank(serverMapper.host())) {
             serverAgentContext.setHost(serverMapper.host());
         }

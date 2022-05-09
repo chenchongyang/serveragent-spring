@@ -12,11 +12,6 @@ import org.springframework.lang.NonNull;
 public interface ServerClient {
 
     /**
-     * 初始化
-     */
-    void init();
-
-    /**
      * 具体的请求实现
      * 
      * @param serverAgentContext context参数

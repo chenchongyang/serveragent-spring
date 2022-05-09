@@ -1,6 +1,11 @@
 
-package cn.chenchongyang.serveragent.spring;
+package cn.chenchongyang.serveragent.spring.common;
 
+import cn.chenchongyang.serveragent.spring.RequestMethod;
+import cn.chenchongyang.serveragent.spring.ServerAgentContext;
+import cn.chenchongyang.serveragent.spring.ServerAgentException;
+import cn.chenchongyang.serveragent.spring.ServerAgentResponse;
+import cn.chenchongyang.serveragent.spring.ServerClient;
 import lombok.extern.slf4j.Slf4j;
 
 import com.alibaba.fastjson.JSON;
@@ -20,7 +25,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 import org.springframework.lang.NonNull;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -29,6 +33,8 @@ import java.util.Map;
 import java.util.StringJoiner;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import javax.annotation.PostConstruct;
 
 /**
  * 类简要描述
@@ -44,9 +50,8 @@ public class DefaultNetworkClient implements ServerClient {
 
     private CloseableHttpClient closeableHttpClient;
 
-    @Override
+    @PostConstruct
     public void init() {
-        // todo 是否多次初始化
         closeableHttpClient = HttpClients.custom()
             .setDefaultRequestConfig(DEFAULT_REQUEST_CONFIG)
             .setConnectionManager(creatConnectionManager())

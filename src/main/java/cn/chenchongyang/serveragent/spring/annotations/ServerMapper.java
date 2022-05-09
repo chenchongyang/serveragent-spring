@@ -1,7 +1,7 @@
 
 package cn.chenchongyang.serveragent.spring.annotations;
 
-import org.springframework.web.bind.annotation.RequestMethod;
+import cn.chenchongyang.serveragent.spring.RequestMethod;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
